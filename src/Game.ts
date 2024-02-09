@@ -1,5 +1,5 @@
 import * as PIXI from 'pixi.js'
-import {Sprite} from "pixi.js";
+import Background from "./Components/Background";
 
 export class Game {
     private m_app: PIXI.Application;
@@ -7,9 +7,9 @@ export class Game {
     constructor(app: PIXI.Application) {
         this.m_app = app;
 
-        const sprite = Sprite.from('assets/goblin.png');
+        const background = new Background();
 
-        this.m_app.stage.addChild(sprite);
+        this.m_app.stage.addChild(background);
     }
 }
 
