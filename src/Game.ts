@@ -1,6 +1,7 @@
 import * as PIXI from 'pixi.js'
 import Background from "./Components/Background/Background";
 import SymbolManager from "./Components/SymbolManager/SymbolManager";
+import Bonus from "./Components/Bonus/Bonus";
 import settings from "./settings.json";
 
 export class Game {
@@ -11,10 +12,14 @@ export class Game {
         this.m_app = app;
 
         const background = new Background();
-        this.m_app.stage.addChild(background);
-
         const symbolManager = new SymbolManager();
-        this.m_app.stage.addChild(symbolManager);
+        const bonus = new Bonus();
+
+        this.m_app.stage.addChild(
+            background,
+            symbolManager,
+            bonus
+        );
     }
 
     onSpinButtonPressed(): void {
@@ -30,7 +35,7 @@ export class Game {
         // symbolManager.updateSymbols(data);
 
         // play reveal animation
-        
+
         // award wins
 
         // Reactive spin button
