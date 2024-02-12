@@ -16,6 +16,27 @@ export class Game {
         const symbolManager = new SymbolManager();
         this.m_app.stage.addChild(symbolManager);
     }
+
+    onSpinButtonPressed(): void {
+        // disable spin button
+        this.playGame();
+    }
+
+    playGame(): Promise<void> {
+        // deduct credit
+
+        // const data = generateData();
+
+        // symbolManager.updateSymbols(data);
+
+        // play reveal animation
+        
+        // award wins
+
+        // Reactive spin button
+
+        return Promise.resolve()
+    }
 }
 
 export default Game;
