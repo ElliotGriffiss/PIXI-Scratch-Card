@@ -5,17 +5,17 @@ import Bonus from "./Components/Bonus/Bonus";
 import settings from "./settings.json";
 
 export class Game {
-    private m_app: PIXI.Application;
-    private m_curreny = settings.startingCurrency;
+    private _app: PIXI.Application;
+    private _curreny = settings.startingCurrency;
 
     constructor(app: PIXI.Application) {
-        this.m_app = app;
+        this._app = app;
 
         const background = new Background();
         const symbolManager = new SymbolManager();
         const bonus = new Bonus();
 
-        this.m_app.stage.addChild(
+        this._app.stage.addChild(
             background,
             symbolManager,
             bonus

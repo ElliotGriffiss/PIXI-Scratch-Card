@@ -1,14 +1,14 @@
 import { Container, Text } from 'pixi.js';
 
 class Symbol extends Container {
-    private text: Text;
+    private _text: Text;
 
     constructor( x: number, y: number ) {
         super();
         this.x = x;
         this.y = y;
 
-        this.text = new Text('£500.00', {
+        this._text = new Text('£500.00', {
             fontFamily: 'minecraftia',
             fontSize: 21,
             fill: "white",
@@ -16,11 +16,11 @@ class Symbol extends Container {
             padding: 15
         });
 
-        this.addChild(this.text)
+        this.addChild(this._text)
     }
 
     setText(newText: number): void {
-        this.text.text = (`£${newText}`);
+        this._text.text = (`£${newText}`);
     }
 }
 

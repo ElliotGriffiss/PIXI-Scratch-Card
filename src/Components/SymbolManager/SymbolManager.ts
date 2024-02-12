@@ -4,12 +4,12 @@ import settings from './SymbolManagerSettings.json';
 import symbol from "../Symbol/Symbol";
 
 class SymbolManager extends Container {
-    private symbols: Symbol[];
+    private _symbols: Symbol[];
 
     constructor() {
         super();
 
-        this.symbols = settings.symbolPositions.map(({x, y}) => {
+        this._symbols = settings.symbolPositions.map(({x, y}) => {
             const symbol = new Symbol(x, y)
             this.addChild(symbol);
             return symbol;
@@ -17,7 +17,7 @@ class SymbolManager extends Container {
     }
 
     updateSymbols(values: number[]): void {
-        this.symbols.forEach((symbol, index) => {
+        this._symbols.forEach((symbol, index) => {
            symbol.setText(values[index]);
         });
     }

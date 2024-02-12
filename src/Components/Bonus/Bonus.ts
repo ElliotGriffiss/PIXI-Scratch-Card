@@ -1,7 +1,7 @@
 import {Container, Sprite, Text} from 'pixi.js';
 
 class Bonus extends Container {
-    private text: Text;
+    private _text: Text;
 
     constructor() {
         super();
@@ -10,7 +10,7 @@ class Bonus extends Container {
         sprite.x = 68;
         sprite.y = 103;
 
-        this.text = new Text('£5.00', {
+        this._text = new Text('£5.00', {
             fontFamily: 'minecraftia',
             fontSize: 21,
             fill: "white",
@@ -18,14 +18,14 @@ class Bonus extends Container {
             padding: 15
         })
 
-        this.text.x = 60;
-        this.text.y = 207;
+        this._text.x = 60;
+        this._text.y = 207;
 
-        this.addChild(this.text, sprite);
+        this.addChild(this._text, sprite);
     }
 
     showBonus(newText: number): void {
-        this.text.text = (`£${newText}`);
+        this._text.text = (`£${newText}`);
         this.visible = true;
     }
 
