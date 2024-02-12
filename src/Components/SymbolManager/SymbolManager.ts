@@ -1,0 +1,19 @@
+import { Container } from 'pixi.js';
+import Symbol from '../Symbol/Symbol';
+import settings from './SymbolManagerSettings.json';
+
+class SymbolManager extends Container {
+    private symbols: Symbol[];
+
+    constructor() {
+        super();
+
+        this.symbols = settings.symbolPositions.map(({x, y}) => {
+            const symbol = new Symbol(x, y)
+            this.addChild(symbol);
+            return symbol;
+        })
+    }
+}
+
+export default SymbolManager;
