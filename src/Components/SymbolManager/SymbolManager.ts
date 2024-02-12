@@ -1,6 +1,7 @@
 import { Container } from 'pixi.js';
 import Symbol from '../Symbol/Symbol';
 import settings from './SymbolManagerSettings.json';
+import symbol from "../Symbol/Symbol";
 
 class SymbolManager extends Container {
     private symbols: Symbol[];
@@ -13,6 +14,12 @@ class SymbolManager extends Container {
             this.addChild(symbol);
             return symbol;
         })
+    }
+
+    updateSymbols(values: number[]): void {
+        this.symbols.forEach((symbol, index) => {
+           symbol.setText(values[index]);
+        });
     }
 }
 

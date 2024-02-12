@@ -18,6 +18,10 @@ class Symbol extends Container {
 
         this.addChild(this.text)
     }
+
+    setText(newText: number): void {
+        this.text.text = (`£${newText}`);
+    }
 }
 
 export default Symbol;
