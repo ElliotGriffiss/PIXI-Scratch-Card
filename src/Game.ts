@@ -2,6 +2,7 @@ import * as PIXI from 'pixi.js'
 import Background from "./Components/Background/Background";
 import SymbolManager from "./Components/SymbolManager/SymbolManager";
 import Bonus from "./Components/Bonus/Bonus";
+import Button from "./Components/Button/Button";
 import settings from "./settings.json";
 
 export class Game {
@@ -14,11 +15,13 @@ export class Game {
         const background = new Background();
         const symbolManager = new SymbolManager();
         const bonus = new Bonus();
+        const button = new Button(() => {this.onSpinButtonPressed});
 
         this._app.stage.addChild(
             background,
             symbolManager,
-            bonus
+            bonus,
+            button
         );
     }
 
