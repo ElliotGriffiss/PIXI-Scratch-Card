@@ -1,6 +1,6 @@
-# PIXI-Template
+# PIXI-Scratch-Card
 
-A Pixi.js, TypeScript, webpack bunder to help you get started quicker.
+A PIXI.js Scratch Card made using Webpack, npm, and TypeScript.
 
 ## Setup
 
