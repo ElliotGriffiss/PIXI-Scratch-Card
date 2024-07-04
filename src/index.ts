@@ -37,7 +37,7 @@ export class PixiAppManager {
         await loader._preload();
         loader.createLoadingScreen();
         await loader.load();
-        new Game();
+        global.app.stage.addChild(new Game());
         loader.destroyLoadingScreen();
     }
 }
