@@ -6,9 +6,17 @@ import Button from "./engine/Button/Button";
 import Animation from "./engine/Animation/Animation";
 import Timings from "./engine/Utils/Timings/Timings";
 
+import Background from "./Components/Background/Background";
+
 class Game extends Container{
     constructor() {
         super();
+
+        const background = new Background();
+
+        this.addChild(
+            background
+        );
     }
 }
 
