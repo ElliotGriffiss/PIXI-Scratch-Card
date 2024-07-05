@@ -7,15 +7,19 @@ import Animation from "./engine/Animation/Animation";
 import Timings from "./engine/Utils/Timings/Timings";
 
 import Background from "./Components/Background/Background";
+import SymbolManager from "./Components/SymbolManager/SymbolManager";
 
 class Game extends Container{
+
     constructor() {
         super();
 
         const background = new Background();
+        const symbolManager = new SymbolManager();
 
         this.addChild(
-            background
+            background,
+            symbolManager
         );
     }
 }

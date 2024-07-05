@@ -17,8 +17,8 @@ body {
 }
 
 @font-face {
-    font-family: 'minecraftmedium';
-    src: url('assets/fonts/minecraftmedium.woff2') format('woff2');
+    font-family: 'minecraft-webfont';
+    src: url('assets/fonts/minecraft-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
