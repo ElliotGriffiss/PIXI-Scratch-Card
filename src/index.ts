@@ -18,7 +18,7 @@ export class PixiAppManager {
             autoDensity: true,
             backgroundColor: "#000000",
             width: 480,
-            height: 320,
+            height: 320
         });
 
         global.app = app;

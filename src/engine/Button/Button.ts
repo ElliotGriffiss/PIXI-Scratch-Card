@@ -19,9 +19,6 @@ class Button extends Container {
         super();
         this._buttonPayload = buttonPayload;
 
-        this.x = 292;
-        this.y = 254;
-
         this._activeSprite = Sprite.from(constructor.active);
         this._pressedSprite = Sprite.from(constructor.pressed);
         this._inactiveSprite = Sprite.from(constructor.inactive);
