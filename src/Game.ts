@@ -9,6 +9,8 @@ import Timings from "./engine/Utils/Timings/Timings";
 import Background from "./Components/Background/Background";
 import SymbolManager from "./Components/SymbolManager/SymbolManager";
 import Bonus from "./Components/Bonus/Bonus";
+import RevealAnimation from "./Components/RevealAnimation/RevealAnimation";
+import SpinButton from "./Components/SpinButton/SpinButton";
 import CreditPanel from "./Components/CreditPanel/CreditPanel";
 
 class Game extends Container {
@@ -20,34 +22,24 @@ class Game extends Container {
         const background = new Background();
         const symbolManager = new SymbolManager();
         const bonus = new Bonus();
+        const revealAnimation = new RevealAnimation();
+
         const creditPanel = new CreditPanel();
         creditPanel.setText(this._credit);
 
-        const spinButton = this._createSpinButton();
+        const spinButton = new SpinButton(()=> {this._onSpinButtonPressed()});
 
         this.addChild(
             background,
             symbolManager,
             bonus,
+            revealAnimation,
             creditPanel,
             spinButton
         );
     }
 
-    private _createSpinButton(): Button {
-        const spinButton = new Button(()=> {this.onSpinButtonPressed()},
-            {
-                active: global.game.ButtonActive,
-                pressed: global.game.ButtonPressed,
-                inactive: global.game.ButtonInactive
-            });
-        spinButton.x = 292;
-        spinButton.y = 254;
-
-        return spinButton;
-    }
-
-    onSpinButtonPressed(): void {
+    private _onSpinButtonPressed(): void {
         void this.playGame();
     }
 
