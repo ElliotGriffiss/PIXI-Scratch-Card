@@ -24,14 +24,13 @@ class Bonus extends Container {
         this.addChild(this._text, sprite);
     }
 
-        showBonus(newText: number): void {
-            this._text.text = (`£${newText}`);
-            this.visible = true;
-        }
-
-        hideBonus(): void {
-            this.visible = false;
-        }
+    showBonus(newText: number): void {
+        this._text.text = (`£${newText}`);
+        this.visible = true;
     }
 
-    export default Bonus;
+    hideBonus(): void {
+        this.visible = false;
+    }
+}
+export default Bonus;
