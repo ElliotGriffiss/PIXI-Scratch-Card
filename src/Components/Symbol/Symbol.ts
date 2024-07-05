@@ -8,13 +8,13 @@ class Symbol extends Container {
         this.x = x;
         this.y = y;
 
-        this._text = new Text('£500.00', {
+        this._text = new Text({text: '£500.00', style: {
             fontFamily: 'minecraft-webfont',
             fontSize: 26,
             fill: "white",
             align: 'center',
             padding: 15
-        });
+        }});
         this._text.anchor = {x: 0.5, y: 0.5};
 
         this.addChild(this._text)
