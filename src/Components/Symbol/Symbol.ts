@@ -15,6 +15,7 @@ class Symbol extends Container {
             align: 'center',
             padding: 15
         });
+        this._text.anchor = {x: 0.5, y: 0.5};
 
         this.addChild(this._text)
     }
