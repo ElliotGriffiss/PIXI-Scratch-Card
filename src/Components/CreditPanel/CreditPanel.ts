@@ -3,7 +3,7 @@ import {Container, Text} from "pixi.js";
 class CreditPanel extends Container {
     private readonly _text: Text;
 
-    constructor() {
+    constructor(startingCredit: number) {
         super();
         this.x = 183;
         this.y = 276;
@@ -17,6 +17,7 @@ class CreditPanel extends Container {
         this._text.anchor = {x: 0.5, y: 0.5};
 
         this.addChild(this._text);
+        this.setText(startingCredit);
     }
 
     setText(text: number): void {

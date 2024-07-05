@@ -31,8 +31,7 @@ class Game extends Container {
         this._symbolManager = new SymbolManager();
         this._bonus = new Bonus();
         this._revealAnimation = new RevealAnimation();
-        this._creditPanel = new CreditPanel();
-        this._creditPanel.setText(this._credit);
+        this._creditPanel = new CreditPanel(this._credit);
 
         this._spinButton = new SpinButton(()=> {this._onSpinButtonPressed()});
 
