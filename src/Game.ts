@@ -1,10 +1,4 @@
-import {Container, Sprite, Text} from "pixi.js";
-import {sound} from '@pixi/sound';
-import gsap from "gsap";
-
-import Button from "./engine/Button/Button";
-import Animation from "./engine/Animation/Animation";
-import Timings from "./engine/Utils/Timings/Timings";
+import {Container } from "pixi.js";
 
 import Background from "./Components/Background/Background";
 import SymbolManager from "./Components/SymbolManager/SymbolManager";
@@ -12,10 +6,13 @@ import Bonus from "./Components/Bonus/Bonus";
 import RevealAnimation from "./Components/RevealAnimation/RevealAnimation";
 import SpinButton from "./Components/SpinButton/SpinButton";
 import CreditPanel from "./Components/CreditPanel/CreditPanel";
+import LocalPlatform from "./Components/LocalPlatform/LocalPlatform";
 
 import setting from './app.json';
 
 class Game extends Container {
+    private _localPlatform: LocalPlatform = null;
+
     private readonly _symbolManager: SymbolManager = null;
     private readonly _bonus: Bonus = null;
     private readonly _revealAnimation: RevealAnimation = null;
@@ -26,6 +23,7 @@ class Game extends Container {
 
     constructor() {
         super();
+        this._localPlatform = new LocalPlatform(setting.symbolCount, setting.chanceTable);
 
         const background = new Background();
         this._symbolManager = new SymbolManager();
@@ -56,12 +54,20 @@ class Game extends Container {
 
     async playGame(): Promise<void> {
         this._spinButton.isActive = false;
+        this._revealAnimation.reset();
+
+        const betResult = await this._localPlatform.generateResults();
+        this._symbolManager.updateSymbols(betResult.results);
 
         await this._revealAnimation.play();
+
+        this._credit += betResult.winAmount;
+        this._creditPanel.setText(this._credit);
 
         if (this._credit >= setting.stake) {
             this._spinButton.isActive = true;
         }
+
         return Promise.resolve();
     }
 }

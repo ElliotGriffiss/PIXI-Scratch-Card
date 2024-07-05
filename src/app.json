@@ -1,4 +1,39 @@
 {
   "startingCredit": 10,
-  "stake": 1
+  "stake": 1,
+  "symbolCount": 8,
+  "chanceTable": [
+    {
+      "oddsIn1": 1000,
+      "value": 480000
+    },
+    {
+      "oddsIn1": 12000,
+      "value": 100
+    },
+    {
+      "oddsIn1": 1412,
+      "value": 40
+    },
+    {
+      "oddsIn1": 300,
+      "value": 20
+    },
+    {
+      "oddsIn1": 92,
+      "value": 10
+    },
+    {
+      "oddsIn1": 50,
+      "value": 5
+    },
+    {
+      "oddsIn1": 48,
+      "value": 4
+    },
+    {
+      "oddsIn1": 17,
+      "value": 2
+    }
+  ]
 }
