@@ -59,6 +59,12 @@ class Game extends Container {
         const betResult = await this._localPlatform.generateResults();
         this._symbolManager.updateSymbols(betResult.results, betResult.winningIndexes);
 
+        if (betResult.bonusWin) {
+            this._bonus.showBonus(setting.gameSettings.bonus.value);
+        } else {
+            this._bonus.hideBonus();
+        }
+
         await this._revealAnimation.play();
 
         this._credit += betResult.winAmount;

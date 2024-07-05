@@ -59,8 +59,15 @@ class LocalPlatform {
             }
         }
 
+        // Handles the bonus feature.
+        const bonusWin = this._randomRange(1, this._gameSettings.bonus.oddsIn1) === 1;
+        if (bonusWin) {
+            winAmount+= this._gameSettings.bonus.value;
+        }
+
         const betResult: BetResult = {
             winAmount: winAmount,
+            bonusWin: bonusWin,
             results: results,
             winningIndexes: winningIndexes
         };

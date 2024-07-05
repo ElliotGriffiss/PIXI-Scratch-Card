@@ -4,6 +4,10 @@
   "gameSettings":{
     "symbolCount": 8,
     "winCap": 2,
+    "bonus": {
+      "oddsIn1": 50,
+      "value": 5
+    },
     "prizeTable": [1, 2, 4, 5, 10, 20, 40, 100, 1000],
     "chanceTable": [
       {
