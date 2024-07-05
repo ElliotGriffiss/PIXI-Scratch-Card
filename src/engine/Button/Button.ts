@@ -1,6 +1,6 @@
 import {Container, Sprite, Texture} from 'pixi.js';
 
-type buttonSettings = {
+type ButtonSettings = {
     active?: Texture;
     pressed?: Texture;
     inactive?: Texture;
@@ -15,7 +15,7 @@ class Button extends Container {
 
     private readonly _buttonPayload: () => void;
 
-    constructor(buttonPayload:() => void, constructor: buttonSettings) {
+    constructor(buttonPayload:() => void, constructor: ButtonSettings) {
         super();
         this._buttonPayload = buttonPayload;
 
