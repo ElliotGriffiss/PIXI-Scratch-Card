@@ -1,39 +1,47 @@
 {
   "startingCredit": 10,
   "stake": 1,
-  "symbolCount": 8,
-  "chanceTable": [
-    {
-      "oddsIn1": 1000,
-      "value": 480000
-    },
-    {
-      "oddsIn1": 12000,
-      "value": 100
-    },
-    {
-      "oddsIn1": 1412,
-      "value": 40
-    },
-    {
-      "oddsIn1": 300,
-      "value": 20
-    },
-    {
-      "oddsIn1": 92,
-      "value": 10
-    },
-    {
-      "oddsIn1": 50,
-      "value": 5
-    },
-    {
-      "oddsIn1": 48,
-      "value": 4
-    },
-    {
-      "oddsIn1": 17,
-      "value": 2
-    }
-  ]
+  "gameSettings":{
+    "symbolCount": 8,
+    "winCap": 2,
+    "prizeTable": [1, 2, 4, 5, 10, 20, 40, 100, 1000],
+    "chanceTable": [
+      {
+        "oddsIn1": 240000,
+        "value": 1000
+      },
+      {
+        "oddsIn1": 6000,
+        "value": 100
+      },
+      {
+        "oddsIn1": 420,
+        "value": 40
+      },
+      {
+        "oddsIn1": 150,
+        "value": 20
+      },
+      {
+        "oddsIn1": 82,
+        "value": 10
+      },
+      {
+        "oddsIn1": 46,
+        "value": 5
+      },
+      {
+        "oddsIn1": 36,
+        "value": 4
+      },
+      {
+        "oddsIn1": 20,
+        "value": 2
+      },
+      {
+        "oddsIn1": 15,
+        "value": 1
+      }
+    ]
+  }
 }

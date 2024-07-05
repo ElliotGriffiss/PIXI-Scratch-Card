@@ -23,7 +23,7 @@ class Game extends Container {
 
     constructor() {
         super();
-        this._localPlatform = new LocalPlatform(setting.symbolCount, setting.chanceTable);
+        this._localPlatform = new LocalPlatform(setting.gameSettings);
 
         const background = new Background();
         this._symbolManager = new SymbolManager();
@@ -57,7 +57,7 @@ class Game extends Container {
         this._revealAnimation.reset();
 
         const betResult = await this._localPlatform.generateResults();
-        this._symbolManager.updateSymbols(betResult.results);
+        this._symbolManager.updateSymbols(betResult.results, betResult.winningIndexes);
 
         await this._revealAnimation.play();
 
