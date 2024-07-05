@@ -47,6 +47,13 @@ class Animation extends Container {
         }
     }
 
+    reset(): void {
+        if (!this._playing) {
+            const startingFrame =  (`${this._settings.prefix}0`);
+            this._target.texture = global.game[startingFrame];
+        }
+    }
+
     private _update(ticker: Ticker): void {
         const modifier = this._settings.speedModifier;
         const elapsed = modifier * ticker.deltaTime;
