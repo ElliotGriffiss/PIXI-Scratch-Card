@@ -1,7 +1,7 @@
 import { Container, Text } from 'pixi.js';
 
 class Symbol extends Container {
-    private _text: Text;
+    private readonly _text: Text;
 
     constructor( x: number, y: number ) {
         super();
@@ -21,7 +21,7 @@ class Symbol extends Container {
     }
 
     setText(newText: number): void {
-        this._text.text = (`£${newText}`);
+        this._text.text = (`£${newText.toLocaleString()}`);
     }
 }
 
