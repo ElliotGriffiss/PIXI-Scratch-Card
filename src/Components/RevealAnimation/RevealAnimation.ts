@@ -7,7 +7,7 @@ class RevealAnimation extends Animation {
             prefix: "reveal",
             endingFrame: 7,
             loop: false,
-            speedModifier: 0.35
+            speedModifier: 0.3
         });
 
         this.x = 33;
