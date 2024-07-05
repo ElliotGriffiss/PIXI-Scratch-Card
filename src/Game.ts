@@ -1,4 +1,5 @@
-import {Container } from "pixi.js";
+import {Container} from "pixi.js";
+import {sound} from '@pixi/sound';
 
 import Background from "./Components/Background/Background";
 import SymbolManager from "./Components/SymbolManager/SymbolManager";
@@ -9,6 +10,7 @@ import CreditPanel from "./Components/CreditPanel/CreditPanel";
 import LocalPlatform from "./Components/LocalPlatform/LocalPlatform";
 
 import setting from './app.json';
+import Timings from "./engine/Utils/Timings/Timings";
 
 class Game extends Container {
     private _localPlatform: LocalPlatform = null;
@@ -33,6 +35,8 @@ class Game extends Container {
 
         this._spinButton = new SpinButton(()=> {this._onSpinButtonPressed()});
 
+        sound.play('Main_Theme', {loop: true});
+
         this.addChild(
             background,
             this._symbolManager,
@@ -48,6 +52,7 @@ class Game extends Container {
             this._credit -= setting.stake;
             this._creditPanel.setText(this._credit);
 
+            sound.play('Button_Click');
             void this.playGame();
         }
     }
@@ -70,8 +75,16 @@ class Game extends Container {
         this._credit += betResult.winAmount;
         this._creditPanel.setText(this._credit);
 
+        if (betResult.winAmount > 0) {
+            sound.play('Pickup_Coin');
+            await Timings.wait(500);
+        }
+
         if (this._credit >= setting.stake) {
             this._spinButton.isActive = true;
+        } else {
+            sound.stop('Main_Theme');
+            sound.play('Game_Over');
         }
 
         return Promise.resolve();
