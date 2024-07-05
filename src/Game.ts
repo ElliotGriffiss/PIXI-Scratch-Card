@@ -1,5 +1,6 @@
 import {Container} from "pixi.js";
 import {sound} from '@pixi/sound';
+import Timings from "./engine/Utils/Timings/Timings";
 
 import Background from "./Components/Background/Background";
 import SymbolManager from "./Components/SymbolManager/SymbolManager";
@@ -10,7 +11,6 @@ import CreditPanel from "./Components/CreditPanel/CreditPanel";
 import LocalPlatform from "./Components/LocalPlatform/LocalPlatform";
 
 import setting from './app.json';
-import Timings from "./engine/Utils/Timings/Timings";
 
 class Game extends Container {
     private _localPlatform: LocalPlatform = null;
