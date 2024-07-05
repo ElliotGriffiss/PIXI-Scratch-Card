@@ -20,8 +20,14 @@ class Symbol extends Container {
         this.addChild(this._text)
     }
 
-    setText(newText: number): void {
+    setUpSymbol(newText: number, isWin: boolean): void {
         this._text.text = (`£${newText.toLocaleString()}`);
+
+        if (isWin) {
+            this._text.tint = "yellow";
+        } else {
+            this._text.tint = "white";
+        }
     }
 }
 

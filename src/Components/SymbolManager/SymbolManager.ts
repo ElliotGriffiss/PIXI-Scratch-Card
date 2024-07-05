@@ -15,9 +15,9 @@ class SymbolManager extends Container {
         })
     }
 
-    updateSymbols(values: number[]): void {
+    updateSymbols(results: number[], winningIndexes: number[]): void {
         this._symbols.forEach((symbol, index) => {
-           symbol.setText(values[index]);
+           symbol.setUpSymbol(results[index], winningIndexes.includes(index));
         });
     }
 }
