@@ -8,6 +8,7 @@ import Timings from "./engine/Utils/Timings/Timings";
 
 import Background from "./Components/Background/Background";
 import SymbolManager from "./Components/SymbolManager/SymbolManager";
+import Bonus from "./Components/Bonus/Bonus";
 
 class Game extends Container{
 
@@ -16,10 +17,12 @@ class Game extends Container{
 
         const background = new Background();
         const symbolManager = new SymbolManager();
+        const bonus = new Bonus();
 
         this.addChild(
             background,
-            symbolManager
+            symbolManager,
+            bonus
         );
     }
 }
