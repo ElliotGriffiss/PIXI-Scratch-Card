@@ -1,9 +1,9 @@
 {
   "startingCredit": 10,
-  "stake": 1,
   "gameSettings":{
+    "stake": 1000000,
     "symbolCount": 8,
-    "winCap": 2,
+    "winCap": 1000,
     "bonus": {
       "oddsIn1": 50,
       "value": 5

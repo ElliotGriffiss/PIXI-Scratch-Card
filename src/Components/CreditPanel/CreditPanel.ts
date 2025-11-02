@@ -3,12 +3,12 @@ import {Container, Text} from "pixi.js";
 class CreditPanel extends Container {
     private readonly _text: Text;
 
-    constructor(startingCredit: number) {
+    constructor(startingCredit: string) {
         super();
         this.x = 183;
         this.y = 276;
 
-        this._text = new Text({ text: '£5.00', style: {
+        this._text = new Text({ text: '00.00', style: {
                 fontFamily: 'minecraft-webfont',
                 fontSize: 26,
                 fill: "white",
@@ -20,8 +20,8 @@ class CreditPanel extends Container {
         this.setText(startingCredit);
     }
 
-    setText(text: number): void {
-        this._text.text = (`£${text}`);
+    setText(text: string): void {
+        this._text.text = (`${text}`);
     }
 
 }

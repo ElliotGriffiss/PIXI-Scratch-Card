@@ -66,6 +66,7 @@ class LocalPlatform {
         }
 
         const betResult: BetResult = {
+            balance: {amount: 0, currency: 'USD'}, // Balance will be updated in Game.ts
             winAmount: winAmount,
             bonusWin: bonusWin,
             results: results,
